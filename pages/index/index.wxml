@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="butt1">
+    <navigator url="/pages/xfj/index?title=新饭局" hover-class="butt1">
+        <button type="default">新饭局</button>
+      </navigator>
+  </view>
+  <view class="butt2">
+    <navigator url="/pages/lfj/index?title=已有饭局" hover-class="butt1">
+        <button type="default">已有饭局</button>
+      </navigator>
+  </view>
+  <view class="butt3">
+    <navigator url="/pages/wdfj/wdfj?title=我的饭局" hover-class="butt1">
+        <button type="default">我的饭局</button>
+      </navigator>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
